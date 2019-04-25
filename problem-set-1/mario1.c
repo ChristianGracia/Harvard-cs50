@@ -7,17 +7,23 @@ int main(void)
 {
     int height;
     printf("Enter a height; \n");
-    scanf("%d", &height);
-    printf("hello, %d\n", height);
-    
-    for (int i = 0; i < height; i++)
+    scanf("%i", &height);
+    printf("hello, %i\n", height);
+    if (height > 0 && height <9)
     {
-        for (int j = 0; j < i; j++)
-        {
-             char str [] = ".";
+       for (int i = 0; i < height + 1; i++)
+       {
+          char str [] = ".";
+          printf("%s", str);
+          for (int j = 0; j < i +1; j++)
+          {
             
-             printf("%s#", str);
-        } 
+             printf("#");
+          } 
         printf("\n");   
+       }
+    }
+    else {
+        printf("Enter a height; \n");
     }
 }
