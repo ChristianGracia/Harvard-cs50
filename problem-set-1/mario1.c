@@ -3,27 +3,26 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(void)
-{
-    int height;
+int main(void) {
+  int height;
+  do 
+  {
     printf("Enter a height; \n");
     scanf("%i", &height);
-    printf("hello, %i\n", height);
-    if (height > 0 && height <9)
+    for (int i = 0; i < height + 1; i++) {
     {
-       for (int i = 0; i < height + 1; i++)
-       {
-          char str [] = ".";
-          printf("%s", str);
-          for (int j = 0; j < i +1; j++)
-          {
-            
-             printf("#");
-          } 
-        printf("\n");   
-       }
+      char str[] = ".";
+      printf("%s", str);
+      for (int j = 0; j < i; j++) {
+
+        printf("#");
+      }
+      printf("\n");
     }
-    else {
-        printf("Enter a height; \n");
-    }
+
+  }  
+      
+  }
+  while (height > 8 || height < 0);
+  return height;
 }
