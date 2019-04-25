@@ -1,1 +1,1 @@
-Repository for Harvard-CS50 Problem Sets
+Repository for Harvard cs50 Problem Sets
