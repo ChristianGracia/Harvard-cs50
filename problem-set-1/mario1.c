@@ -11,11 +11,13 @@ int main(void) {
     if (height < 8 && height >0) {
       for (int i = 1; i < height + 1; i++) {
         {
+             for (int k = 0; k < height; k++){
+                 char space[] = ".";
+                 printf("%s", space);
+             }
 
           for (int j = 0; j < i; j++) {
-            char str[] = "";
 
-            printf("%s", str);
             printf("#");
           }
           printf("\n");
