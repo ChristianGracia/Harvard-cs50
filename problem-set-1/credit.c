@@ -3,8 +3,7 @@
 #include <cs50.h>
 #include <math.h>
 
-int numPlaces (long n) 
-{
+int numPlaces (long n) {
     if (n < 0) n = (n == LONG_MIN) ? LONG_MAX : -n;
     if (n < 10) return 1;
     if (n < 100) return 2;
@@ -28,10 +27,38 @@ int numPlaces (long n)
 
 }
 
+int firstDigit(int n)
+{
+
+    while (n >= 10)
+        n /= 10;
+    return n;
+}
+
+int checkSum(){
+
+}
+
 int main(void){
+
+
        long credit = get_long("Enter Credit Card Number: ");
-       printf("\n%li",  credit);
        long n = credit;
        int digits = numPlaces(credit);
-       printf("\n%i", digits);
+       int first = firstDigit(credit);
+       printf("\n%i", first);
+
+       if  (first == 3 && checkSum(credit) == true) {
+           printf("\nAMEX");
+       }
+        if (first == 5 && checkSum(credit) == true) {
+           printf("\nMASTERCARD");
+       }
+        if (first == 4 && checkSum(credit) == true) {
+           printf("\nVISA");
+       }
+
+       else if (digits > 16 or digits < 12) {
+           printf("\nINVALID");
+       }
 }
