@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <cs50.h>
 #include <math.h>
+#include <stdbool.h>
 
 int numPlaces (long n) {
     if (n < 0) n = (n == LONG_MIN) ? LONG_MAX : -n;
@@ -35,30 +36,36 @@ int firstDigit(int n)
     return n;
 }
 
-int checkSum(){
-
+bool checkSum(credit)
+{
+    return true;
 }
 
 int main(void){
 
 
-       long credit = get_long("Enter Credit Card Number: ");
-       long n = credit;
-       int digits = numPlaces(credit);
-       int first = firstDigit(credit);
-       printf("\n%i", first);
+    long long credit = get_long_long("Enter Credit Card Number: ");
+    long long n = credit;
+    int digits = numPlaces(credit);
+    int first = firstDigit(credit/10000000);
+    printf("\n%i", first);
+    bool check = checkSum(credit);
 
-       if  (first == 3 && checkSum(credit) == true) {
-           printf("\nAMEX");
-       }
-        if (first == 5 && checkSum(credit) == true) {
-           printf("\nMASTERCARD");
-       }
-        if (first == 4 && checkSum(credit) == true) {
-           printf("\nVISA");
-       }
+    if  (first == 3 && check == true)
+    {
+          printf("\nAMEX");
+    }
+    if (first == 5 && check == true)
+    {
+          printf("\nMASTERCARD");
+    }
+    if (first == 4 && check == true)
+    {
+          printf("\nVISA");
+    }
 
-       else if (digits > 16 or digits < 12) {
-           printf("\nINVALID");
-       }
+    else if (digits > 16 || digits < 12)
+    {
+          printf("\nINVALID");
+    }
 }
