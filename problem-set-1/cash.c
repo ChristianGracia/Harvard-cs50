@@ -3,13 +3,14 @@
 
 int main (void)
 {
-    int owed;
+    float owed;
 
-    owed = get_float("How much change is owed?");
+
 
     do
     {
-        printf("%*d", 2, owed);
+        owed = get_float("How much change is owed?");
+        printf("%.2f", owed);
 
     }
 
