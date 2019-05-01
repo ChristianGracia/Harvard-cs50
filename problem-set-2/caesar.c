@@ -1,4 +1,4 @@
-//Caesar cypher, user inputs an integer and then is prompted for text to be encrypted using the integer as a key
+//Caesar cipher, user inputs an integer and then is prompted for text to be encrypted using the integer as a key
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -26,17 +26,38 @@ int main(int argc, string argv[])
         printf("Sucess\n");
         printf("%s\n", key);
         string text = get_string("input text to be encrypted: ");
-        int textToNumber[strlen(text)];
-        for (int i = 0; i < strlen(text); i++)
+        int length = strlen(text);
+        int key1 = atoi(key);
+        
+        while (key1 > 26)
         {
-            textToNumber[i] += atoi(text);
-            printf("%d", textToNumber[i]);
-
+            key1 -= 26;
         }
+
+        printf("ciphertext: ");
+
+
+        for (int i = 0; i < length; i++)
+        {
+            if islower(text[i])
+            {
+                printf("%c", (((text[i] + key1) - 97) % 26) + 97);
+            }
+            else if isupper(text[i])
+            {
+                printf("%c", (((text[i] + key1) - 65) % 26) + 65);
+            }
+            else
+            {
+                printf("%c", text[i]);
+            }
+        }
+        printf("\n");
     }
 }
 
-int argExists (int c){
+int argExists(int c)
+{
     if (c > 1)
     {
         return 1;
@@ -52,12 +73,12 @@ int checkValid(string n, int b)
     {
         for (int i = 0; i < strlen(n); i++)
         {
-        if (isdigit(n[i]) == false)
-        {
-            return 0;
-            break;
+            if (isdigit(n[i]) == false)
+            {
+                return 0;
+                break;
+            }
         }
-    }
     }
     return 1;
 }
