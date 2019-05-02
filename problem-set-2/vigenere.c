@@ -49,7 +49,7 @@ int main(int argc, string argv[])
                 {
                     printf("%c", (((text[i] + keynum) - 65) % 26) + 65);
                 }
-                    j++;
+                j++;
             }
             else
             {
