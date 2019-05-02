@@ -1,5 +1,4 @@
 #include <cs50.h>
-#include <cs50.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -39,17 +38,19 @@ int main(int argc, string argv[])
 
         printf("keynum is: %i\n", keynum);
 
-        // for (int i = 0; i <= length; i++){
+        for (int i = 0; i <= length; i++)
+        {
 
-        //     if (isalpha(text[i]) == true)
-        //     {
-        //         printf("\n%c", text[i] + keynum);
-        //     }
-            // else {
-            //     printf("%c\n", text[i]);
-            // }
+            if (isalpha(text[i]))
+            {
+                printf("%c", text[i] + keynum);
+            }
+            else
+            {
+                printf("%c", text[i]);
+            }
 
-        // }
+        }
 
     }
 }
