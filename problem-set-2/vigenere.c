@@ -1,3 +1,5 @@
+//vigenere cipher
+//user inputs a word that is used as a key to shift letters up and will repeat itself if key length < message length
 #include <cs50.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -10,9 +12,11 @@ int shift(char c);
 
 int main(int argc, string argv[])
 {
+
     string key = argv[1];
     int argExists1 = argExists(argc);
     int valid = checkValid(key, argc);
+
 
 
     if (argc != 2 || argExists1 < 1 || valid < 1 )
@@ -22,6 +26,8 @@ int main(int argc, string argv[])
     }
     else
     {
+
+        int keylength = strlen(key);
         printf("Sucess\n");
         printf("%s\n", key);
 
@@ -29,21 +35,22 @@ int main(int argc, string argv[])
         string text = get_string("Enter text here: ");
         int length = strlen(text);
         printf("plaintext: %s\n", text);
+        printf("ciphertext: ");
 
 
-        char key1 = key[0];
-
-        int keynum = shift(key1);
+        // char key1 = key[0];
 
 
-        printf("keynum is: %i\n", keynum);
-
-        for (int i = 0; i <= length; i++)
+        for (int i = 0, j = 0; i <= length; i++)
         {
-
             if (isalpha(text[i]))
             {
-                printf("%c", text[i] + keynum);
+                int index = j % keylength;
+                int keynum = shift(argv[0][index]);
+                printf("keynum is: %i\n", keynum);
+                // printf("%c", text[i] + keynum);
+                j++;
+
             }
             else
             {
