@@ -19,8 +19,7 @@ int main(int argc, string argv[])
 
 
 
-    if (argc != 2 || argExists1 < 1 || valid < 1 )
-    {
+    if (argc != 2 || argExists1 < 1 || valid < 1)
         printf("Usage: ./caesar key\n");
         return 1;
     }
@@ -28,29 +27,28 @@ int main(int argc, string argv[])
     {
 
         int keylength = strlen(key);
-        printf("Sucess\n");
+        printf("Success\n");
         printf("%s\n", key);
 
-        //get string
         string text = get_string("Enter text here: ");
         int length = strlen(text);
-        printf("plaintext: %s\n", text);
         printf("ciphertext: ");
 
-
-        // char key1 = key[0];
-
-
-        for (int i = 0, j = 0; i <= length; i++)
+        for (int i = 0, j = 0; i < length; i++)
         {
             if (isalpha(text[i]))
             {
                 int index = j % keylength;
-                int keynum = shift(argv[0][index]);
-                printf("keynum is: %i\n", keynum);
-                // printf("%c", text[i] + keynum);
-                j++;
-
+                int keynum = shift(key[index]);
+                if islower(text[i])
+                {
+                    printf("%c", (((text[i] + keynum) - 97) % 26) + 97);
+                }
+                else if isupper(text[i])
+                {
+                    printf("%c", (((text[i] + keynum) - 65) % 26) + 65);
+                }
+                    j++;
             }
             else
             {
@@ -58,12 +56,16 @@ int main(int argc, string argv[])
             }
 
         }
+        printf("\n");
 
     }
 }
 
-int shift(char c){
-    if (c > 96){
+int shift(char c)
+{
+    // printf("char c = %c\n", c);
+    if (c > 96)
+    {
         return (c - 97);
     }
     else
