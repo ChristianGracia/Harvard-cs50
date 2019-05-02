@@ -20,7 +20,8 @@ int main (int argc, string argv[])
     }
     else
     {
-        printf("Sucess!");
+        printf("Success!");
+        string key = get_string("Enter password here: ")
     }
 
 }
