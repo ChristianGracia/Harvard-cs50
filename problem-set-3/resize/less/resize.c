@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
     
     //row scan array
-    RGBTRIPLE rowScan[largerWidth];
+    RGBTRIPLE rowScan[largerWidth * sizeof(RGBTRIPLE)];
 
     // iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
