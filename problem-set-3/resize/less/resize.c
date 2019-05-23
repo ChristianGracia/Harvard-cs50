@@ -63,8 +63,8 @@ int main(int argc, char *argv[])
 
     int height = bi.biHeight;
     int width = bi.biWidth;
-    int largerHeight = bi.biHeight * n;
-    int largerWidth = bi.biWidth * n;
+    int largerHeight = height * n;
+    int largerWidth = width * n;
 
     //new and old padding
 
