@@ -59,6 +59,10 @@ int main(int argc, char *argv[])
         return 4;
     }
 
+
+     //new width and height
+    //pixel = 3 bytes, 1 byte per rgb value
+    //3 by 3 = 9 pixels = 27 bytes = need 1 padding for 28 which is divisible by 4
     //new width and height
 
     int height = bi.biHeight;
@@ -86,6 +90,16 @@ int main(int argc, char *argv[])
 
     // determine padding for scanlines
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+    
+    
+    
+    
+    //datatype id[size] / (size * size of datatype) = bytes needed, return starting address
+    //addres + (sizeof(type) * i) using i to get to next memory
+    //0x123 +(sizeof(int) * i) to get memory address
+    //0x123 +(4*1) gets the next memory address after
+    //100100x100100x100100x
+    // 0x123    0x124   0x125
     
     //row scan array
     RGBTRIPLE rowScan[largerWidth * sizeof(RGBTRIPLE)];
