@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     //0x123 +(sizeof(int) * i) to get memory address
     //0x123 +(4*1) gets the next memory address after
     //100100x100100x100100x
-    // 0x123    0x124   0x125
+     // 0x123    0x127   0x131
     
     //row scan array
     RGBTRIPLE rowScan[largerWidth * sizeof(RGBTRIPLE)];
