@@ -103,12 +103,12 @@ int main(int argc, char *argv[])
     
     //row scan array
     RGBTRIPLE rowScan[largerWidth * sizeof(RGBTRIPLE)];
-
-    // iterate over infile's scanlines
+    
+     // iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {
         // iterate over pixels in scanline
-        for (int j = 0; j < bi.biWidth; j++)
+        for (int j = 0; j < width; j++)
         {
             // temporary storage
             RGBTRIPLE triple;
@@ -116,9 +116,13 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
-            // write RGB triple to outfile
-            fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
+            for (int k = 0; k < n; k++)
+            {
+                rowScan[(j * n) + k] = triple;
+            }
         }
+
+
 
         // skip over padding, if any
         fseek(inptr, padding, SEEK_CUR);
