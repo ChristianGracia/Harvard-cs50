@@ -59,12 +59,6 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-
-     //new width and height
-    //pixel = 3 bytes, 1 byte per rgb value
-    //3 by 3 = 9 pixels = 27 bytes = need 1 padding for 28 which is divisible by 4
-    //new width and height
-
     int height = bi.biHeight;
     int width = bi.biWidth;
     int largerHeight = height * n;
@@ -90,22 +84,12 @@ int main(int argc, char *argv[])
 
     // determine padding for scanlines
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
-    
-    
-    
-    
-    //datatype id[size] / (size * size of datatype) = bytes needed, return starting address
-    //addres + (sizeof(type) * i) using i to get to next memory
-    //0x123 +(sizeof(int) * i) to get memory address
-    //0x123 +(4*1) gets the next memory address after
-    //100100x100100x100100x
-     // 0x123    0x127   0x131
-    
-    //row scan array
+
+    //creating array to store pixels from first image
     RGBTRIPLE rowScan[largerWidth * sizeof(RGBTRIPLE)];
-    
-     // iterate over infile's scanlines
-    for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
+
+    // iterate over infile's scanlines
+    for (int i = 0; i < abs(height); i++)
     {
         // iterate over pixels in scanline
         for (int j = 0; j < width; j++)
@@ -116,30 +100,29 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
+            // add what is read to array
             for (int k = 0; k < n; k++)
             {
                 rowScan[(j * n) + k] = triple;
             }
         }
 
-
-
         // skip over padding, if any
-        fseek(inptr, padding, SEEK_CUR);
+        fseek(inptr, smallerPadding, SEEK_CUR);
 
-        // then add it back (to demonstrate how)
-        for (int k = 0; k < padding; k++)
+        //writing new pixels and padding
+        for (int j = 0; j < n; j++)
         {
-            fputc(0x00, outptr);
+            fwrite(rowScan, sizeof(RGBTRIPLE), largerWidth, outptr);
+            for (int k = 0; k < largerPadding; k++)
+            {
+                fputc(0x00, outptr);
+            }
         }
     }
-
-    // close infile
     fclose(inptr);
 
-    // close outfile
     fclose(outptr);
 
-    // success
     return 0;
 }
