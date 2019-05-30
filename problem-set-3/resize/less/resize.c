@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "bmp.h"
 
 int main(int argc, char *argv[])
@@ -16,9 +15,6 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Usage: n infile outfile\n");
         return 1;
     }
-
-
-    printf("%i", n);
 
     // remember filenames
     char *infile = argv[2];
@@ -65,12 +61,10 @@ int main(int argc, char *argv[])
     int largerWidth = width * n;
 
     //new and old padding
-
     int smallerPadding = (4 - (width * sizeof(RGBTRIPLE)) % 4) % 4;
     int largerPadding = (4 - (largerWidth * sizeof(RGBTRIPLE)) % 4) % 4;
 
     //new headers
-
     bi.biHeight = largerHeight;
     bi.biWidth = largerWidth;
     bi.biSizeImage = ((sizeof(RGBTRIPLE) * largerWidth) + largerPadding) * abs(largerHeight);
@@ -106,7 +100,6 @@ int main(int argc, char *argv[])
                 rowScan[(j * n) + k] = triple;
             }
         }
-
         // skip over padding, if any
         fseek(inptr, smallerPadding, SEEK_CUR);
 
@@ -114,6 +107,7 @@ int main(int argc, char *argv[])
         for (int j = 0; j < n; j++)
         {
             fwrite(rowScan, sizeof(RGBTRIPLE), largerWidth, outptr);
+            
             for (int k = 0; k < largerPadding; k++)
             {
                 fputc(0x00, outptr);
