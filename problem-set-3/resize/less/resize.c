@@ -76,9 +76,6 @@ int main(int argc, char *argv[])
     // write outfile's BITMAPINFOHEADER
     fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outptr);
 
-    // determine padding for scanlines
-    int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
-
     //creating array to store pixels from first image
     RGBTRIPLE rowScan[largerWidth * sizeof(RGBTRIPLE)];
 
