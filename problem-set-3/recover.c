@@ -14,13 +14,16 @@ int main(int argc, char *argv[])
        else
        {
            printf("file being read");
+           fread(buffer, 20, 1, inptr);
+           fwrite(buffer)
 
        }
 
    }
    else
    {
-       printf("Usage: ./recover image");
+       fprintf(stderr, "Usage: ./recover image");
        return 1;
    }
+   return 0;
 }
