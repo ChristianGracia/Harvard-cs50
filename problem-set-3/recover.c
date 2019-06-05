@@ -13,9 +13,15 @@ int main(int argc, char *argv[])
        }
        else
        {
+           
            printf("file being read");
-           fread(buffer, 20, 1, inptr);
-           fwrite(buffer)
+           for(int i = 0; i < 20; i++)
+           {
+              fread(buffer, 20, 1, inptr);
+              if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0 == 0xe0)){
+                 fwrite();
+              }
+           }
 
        }
 
