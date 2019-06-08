@@ -23,10 +23,8 @@ int main(int argc, char *argv[])
                  sprintf(filename, "%03i", i);
                  FILE *img= fopen(filename, "w");
               }
-
            }
-
-       }
+       } fclose(img);
 
    }
    else
