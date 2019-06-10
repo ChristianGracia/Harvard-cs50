@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
                  FILE *img= fopen(filename, "w");
               }
            }
-       } fclose(img);
-
+       } 
+       fclose(img);
    }
    else
    {
