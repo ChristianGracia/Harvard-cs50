@@ -27,6 +27,12 @@ int main(int argc, char *argv[])
     //create buffer for image data to be collected
     unsigned char buffer[512];
     
+    //creating array to store img names
+    char fileNames[8];
+    
+    //create counter to increment file name starting at 001
+    int counter = 0;
+    
     
 
 
