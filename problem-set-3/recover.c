@@ -33,7 +33,17 @@ int main(int argc, char *argv[])
     //create counter to increment file name starting at 001
     int counter = 0;
     
+    while(fread(buffer, 512, 1, file) == 1)
+    {
+        
+    }
     
-
+    //close last image file
+    fclose(outptr);
+    
+    //close argument file
+    fclose(inptr);
+    
+    return 0;
 
 }
