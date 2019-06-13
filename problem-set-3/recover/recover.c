@@ -24,16 +24,16 @@ int main(int argc, char *argv[])
     //create output file
     FILE *outptr = NULL;
 
-    //create buffer for image data to be collected
+    //create buffer for image data to be stored in
     unsigned char buffer[512];
 
     //creating array to store img names
     char fileNames[8];
 
-    //create counter to increment file name starting at 001
+    //create counter to increment file name starting at 000
     int counter = 0;
 
-    //flag to signal if image is done
+    //flag to signal when image is done being read
     int nextPic = 0;
 
     while (fread(buffer, 512, 1, inptr) == 1)
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
         }
         if (nextPic == 1)
         {
-            //write found image data to file
+            //write stored image data from buffer to output file
             fwrite(&buffer, 512, 1, outptr);
         }
 

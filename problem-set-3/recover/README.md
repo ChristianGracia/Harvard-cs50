@@ -1,0 +1,1 @@
+This program takes a deleted data image file as an argument and recovers the images as jpgs
