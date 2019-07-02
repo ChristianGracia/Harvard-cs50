@@ -40,7 +40,6 @@ bool load(const char *dictionary)
     if (file == NULL)
     {
         unload();
-        printf("open fail");
         return false;
     }
 
@@ -50,15 +49,8 @@ bool load(const char *dictionary)
     // Insert words into hash table
     while (fscanf(file, "%s", word) != EOF)
     {
-
-        // int key = word[0];
-        // printf("%i", key);
-        return false;
-        
-        // for (int i = 0; i < 27; i++)
-        // {
-        //     word[0]
-        // }
+        int key = hash(word);
+        printf("%i", key);
     }
 
     // Close dictionary
@@ -85,7 +77,6 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
-    
-   // to-do
-   return false;
+    // TODO
+    return false;
 }
