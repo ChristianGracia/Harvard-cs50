@@ -50,6 +50,7 @@ bool load(const char *dictionary)
     while (fscanf(file, "%s", word) != EOF)
     {
         // TODO
+        
     }
 
     // Close dictionary
