@@ -40,6 +40,7 @@ bool load(const char *dictionary)
     if (file == NULL)
     {
         unload();
+        printf("open fail");
         return false;
     }
 
@@ -50,9 +51,9 @@ bool load(const char *dictionary)
     while (fscanf(file, "%s", word) != EOF)
     {
 
-        int key = word[0];
-        printf("%i", key);
-        
+        // int key = word[0];
+        // printf("%i", key);
+        return false;
         
         // for (int i = 0; i < 27; i++)
         // {
@@ -84,6 +85,7 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
+    
    // to-do
    return false;
 }
