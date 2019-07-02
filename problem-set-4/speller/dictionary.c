@@ -53,23 +53,33 @@ bool load(const char *dictionary)
     {
         //get index of hashtable to put word in
         int key = hash(word);
-        printf("%i", key);
+        // printf("%i", key);
         
-        //create node for word
+        //create node for word and allocate memory
         node* hashNode = malloc(sizeof(node));
         
         //copy word into hashNode
         strcpy(hashNode->word, word);
-        printf("%s", hashNode->word);
+        // printf("%s", hashNode->word);
         
-        
-        // hashtable[key]->word = word;
-        // hashtable[key]->next;
-        
+
+        //checks if there is a pointer at index(key) of the hash table
+        if (hashtable[key] == NULL) {
+            
+            hashtable[key] = hashNode;
+            hashNode->next = NULL;
+        }
+        //if hash table[key] is not empty, the next pointer points at the table and the pointer in the table becomes the current pointer
+        else 
+        {
+           hashNode->next = hashtable[key];
+           hashtable[key] = hashNode;
+        }
     }
 
     // Close dictionary
     fclose(file);
+    printf("dictionary closed");
 
     // Indicate success
     return true;
