@@ -49,9 +49,9 @@ bool load(const char *dictionary)
     // Insert words into hash table
     while (fscanf(file, "%s", word) != EOF)
     {
-        
-        // int key = word[0];
-        // printf("%i", key);
+
+        int key = word[0];
+        printf("%i", key);
         
         
         // for (int i = 0; i < 27; i++)
@@ -84,19 +84,6 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
-    //get number of byes for memory allocation
-    fseek(dictionary, 0L, SEEK_END);
-    long numberOfBytes = ftell(dictionary);
-    
-    //reset cursor to beginning
-    fseek(dictionary, 0L, SEEK_SET);
-    
-    //create buffer
-    bufferDictionary = (char*)malloc(numberOfBytes, sizeof(char));
-    
-    if (bufferDictionary == NULL)
-    {
-        printf("buffer error");
-        return 1;
-    }
+   // to-do
+   return false;
 }
