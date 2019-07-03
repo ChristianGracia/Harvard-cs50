@@ -82,10 +82,6 @@ bool load(const char *dictionary)
     
     // Close dictionary
     fclose(file);
-    printf("dictionary closed\n");
-    printf("%i\n", wordCounter);
-    
-    unload();
 
     // Indicate success
     return true;
@@ -94,8 +90,8 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    if (wordCounter > 0){
-        printf("Total words read was: %i", wordCounter);
+    if (wordCounter > 0)
+    {
         return wordCounter;
     }
     else
@@ -107,6 +103,20 @@ unsigned int size(void)
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
+    
+    
+    //find length of word for memory allocation of temp variable
+    int letters = strlen(word);
+    
+    //convert word to lower case using a temp variable to store
+    char *tempWord = malloc(sizeof((char)*letters));
+    
+    //make all letters lowercase with a loop
+    for (int i = 0; i < letters; i++)
+    {
+        tempWord[i] = tolower(word[i]);
+    }
+    
     
     return false;
 }
@@ -122,7 +132,6 @@ bool unload(void)
             hashtable[i]= trav->next;
             free(trav);
         }
-            printf("free\n");
             i++;
     }
     return true;
