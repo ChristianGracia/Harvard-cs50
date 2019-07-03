@@ -66,7 +66,6 @@ bool load(const char *dictionary)
         //checks if there is a pointer at index(key) of the hash table
         if (hashtable[key] == NULL) 
         {
-            
             hashtable[key] = hashNode;
             hashNode->next = NULL;
         }
@@ -76,7 +75,6 @@ bool load(const char *dictionary)
             hashNode->next = hashtable[key];
             hashtable[key] = hashNode;
         }
-        
         //increment words loaded in counter
         wordCounter++;
     }
@@ -105,10 +103,10 @@ unsigned int size(void)
 bool check(const char *word)
 {
     //create temp variable
-    char copy[strlen(word) + 1];
+    char temp[strlen(word) + 1];
     
     //copy string from word to temp variable
-    strcpy(copy, word);
+    strcpy(temp, word);
 
     //get table index from hash
     int key = hash(word);
@@ -118,7 +116,7 @@ bool check(const char *word)
 
     while (trav != NULL)
     {
-        if (strcasecmp(trav->word, copy) == 0)
+        if (strcasecmp(trav->word, temp) == 0)
         {
             return true;
         }
