@@ -123,33 +123,31 @@ bool check(const char *word)
     //find key of table using hash function
     int key = hash(tempWord);
     
-    //check if table even has indices filled with the corresponding letter
-    if (hashtable[key] == NULL)
+    // check if table even has indices filled with the corresponding letter
+    node* rootCheck = hashtable[key];
+    
+    //check if rootNode's word in hashtable is equal to word being checked
+    if(strcmp(rootCheck->word, hashtable[key]->word))
     {
-        return false;
-    }
-    if (strcmp(hashtable[key]->word, word) == 0)
-    {
-            return true;
+        return true;
     }
     
-    else {
-        
-        while(1)
-            {
-                node* trav = hashtable[key];
-                hashtable[key] = trav->next;
-                if (strcmp(hashtable[key]->word, word) == 0)
-                {
-                    break;
-                    return true;
-                }
-                else {
-                    trav = hashtable[key]->next;
-                }
-            }
-            return false;
+    while(rootCheck)
+    {
+        node* trav = hashtable[key];
+        hashtable[key] = trav->next;
+                
+        if (strcmp(hashtable[key]->word, word) == 0)
+        {
+            break;
+            return true;
+        }
+        else 
+        {
+            trav = hashtable[key]->next;
+        }
     }
+    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful else false
