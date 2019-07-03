@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include <stdlib.h>
 
 #include "dictionary.h"
@@ -107,37 +108,60 @@ bool check(const char *word)
     int letters = strlen(word);
     
     //convert word to lower case using a temp variable to store
-    char tempWord[LENGTH];
+    char *tempWord = malloc(letters);
     
-    //make all letters lowercase with a loop
-    for (int i = 0; i < LENGTH; i++)
+    // make all letters lowercase with a loop
+    for (int i = 0; i < letters; i++)
     {
-        tempWord[i] = tolower(word[i]);
+        tempWord[i] = word[i];
     }
     
-    // //add \0 terminator to signal end of word
-    // tempWord[LENGTH] = '\0';
+    //add \0 terminator to signal end of word
+    tempWord[letters] = '\0';
     
     //find key of table using hash function
     int key = hash(tempWord);
     
     //check if table even has an index filled with the corresponding letter
-    node* rootCheck = hashtable[key];
+    // node* rootCheck = hashtable[key];
+    
+    node* rootCheck = malloc(sizeof(node));
+    
+    rootCheck = hashtable[key];
 
-    while(rootCheck != NULL)
+    while (rootCheck != NULL)
     {
-        if (strcmp(rootCheck->word, tempWord) == 0)
-        {
-            //word is in dictionary and valid
+        // use strcasecmp to be case insensitive
+        if (strcasecmp(rootCheck->word, word) == 0)
             return true;
-        }
-        else
-        {
-            //move rootCheck
-            rootCheck = rootCheck->next;
-        }
+        rootCheck = rootCheck->next;
     }
     return false;
+    
+    
+    // if (rootCheck->next == NULL)
+    // {
+    //     if (strcmp(rootCheck->word, tempWord) == 0)
+    //     {
+    //         return true;
+    //     }
+    //     else return false;
+    // }
+
+    // while(rootCheck->next)
+    // {
+    //     if (strcmp(rootCheck->word, tempWord) == 0)
+    //     {
+    //         //word is in dictionary and valid
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         //move rootCheck
+    //         rootCheck = rootCheck->next;
+    //     }
+    // }
+    // return false;
 }
 
 // Unloads dictionary from memory, returning true if successful else false
