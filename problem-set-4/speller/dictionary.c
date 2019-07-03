@@ -6,7 +6,6 @@
 #include <string.h>
 #include <strings.h>
 #include <stdlib.h>
-
 #include "dictionary.h"
 
 // Represents number of buckets in a hash table
@@ -122,7 +121,7 @@ bool check(const char *word)
         {
             return true;
         }
-
+        
         trav = trav->next;
     }
 
