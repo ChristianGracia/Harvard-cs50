@@ -49,7 +49,7 @@ bool load(const char *dictionary)
     }
 
     // Buffer for a word
-    char word[LENGTH + 1];
+    char word[LENGTH];
 
     // Insert words into hash table
     while (fscanf(file, "%s", word) != EOF)
@@ -76,7 +76,7 @@ bool load(const char *dictionary)
             hashtable[key] = hashNode;
         }
         
-        //increment word loaded in counter
+        //increment words loaded in counter
         wordCounter++;
     }
     
@@ -103,41 +103,38 @@ unsigned int size(void)
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    
-    
     //find length of word for memory allocation of temp variable
     int letters = strlen(word);
     
     //convert word to lower case using a temp variable to store
-    char tempWord[letters+1];
+    char tempWord[LENGTH];
     
     //make all letters lowercase with a loop
-    for (int i = 0; i < letters; i++)
+    for (int i = 0; i < LENGTH; i++)
     {
         tempWord[i] = tolower(word[i]);
     }
     
-    //add \0 to end to signal end of word
-    tempWord[letters] = '\0';
+    // //add \0 terminator to signal end of word
+    // tempWord[LENGTH] = '\0';
     
     //find key of table using hash function
     int key = hash(tempWord);
     
-    //check if table even has indices filled with the corresponding letter
+    //check if table even has an index filled with the corresponding letter
     node* rootCheck = hashtable[key];
 
-    while(rootCheck->next != NULL)
+    while(rootCheck != NULL)
     {
-        node* trav = rootCheck;
-        rootCheck = rootCheck->next;
-                
         if (strcmp(rootCheck->word, tempWord) == 0)
         {
+            //word is in dictionary and valid
             return true;
         }
-        else 
+        else
         {
-            trav = rootCheck->next;
+            //move rootCheck
+            rootCheck = rootCheck->next;
         }
     }
     return false;
