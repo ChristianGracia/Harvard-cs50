@@ -86,7 +86,7 @@ bool load(const char *dictionary)
     // Indicate success
     return true;
 }
-
+bool unload(void); 
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
@@ -109,7 +109,7 @@ bool check(const char *word)
     int letters = strlen(word);
     
     //convert word to lower case using a temp variable to store
-    char *tempWord = malloc(sizeof((char)*letters));
+    char *tempWord = malloc(4*letters);
     
     //make all letters lowercase with a loop
     for (int i = 0; i < letters; i++)
@@ -117,8 +117,39 @@ bool check(const char *word)
         tempWord[i] = tolower(word[i]);
     }
     
+    //add \0 to end to signal end of word
+    tempWord[letters] = '\0';
     
-    return false;
+    //find key of table using hash function
+    int key = hash(tempWord);
+    
+    //check if table even has indices filled with the corresponding letter
+    if (hashtable[key] == NULL)
+    {
+        return false;
+    }
+    if (strcmp(hashtable[key]->word, word) == 0)
+    {
+            return true;
+    }
+    
+    else {
+        
+        while(1)
+            {
+                node* trav = hashtable[key];
+                hashtable[key] = trav->next;
+                if (strcmp(hashtable[key]->word, word) == 0)
+                {
+                    break;
+                    return true;
+                }
+                else {
+                    trav = hashtable[key]->next;
+                }
+            }
+            return false;
+    }
 }
 
 // Unloads dictionary from memory, returning true if successful else false
@@ -129,7 +160,7 @@ bool unload(void)
         while (hashtable[i]->next != NULL)
         {
             node* trav = hashtable[i];
-            hashtable[i]= trav->next;
+            hashtable[i] = trav->next;
             free(trav);
         }
             i++;
