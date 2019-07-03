@@ -112,6 +112,23 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
+    for (int i = 0; hashtable[i] == Null; i++)
+    {
+        if (hashtable[i]->next != NULL)
+        {
+            node* trav = hashtable[i];
+            trav->next = hashtable[i]->next;
+            trav = trav->next;
+            free(trav);
+        }
+        else
+        {
+            printf("free\n");
+            hashtable[i] = NULL;
+            free(hashtable[i]);
+            i++;
+        }
+    }
     // TODO
     return false;
 }
