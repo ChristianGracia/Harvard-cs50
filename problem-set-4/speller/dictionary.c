@@ -76,14 +76,16 @@ bool load(const char *dictionary)
             hashtable[key] = hashNode;
         }
         
-        //increment word loaded
+        //increment word loaded in counter
         wordCounter++;
     }
     
     // Close dictionary
     fclose(file);
     printf("dictionary closed\n");
-    printf("%i", wordCounter);
+    printf("%i\n", wordCounter);
+    
+    unload();
 
     // Indicate success
     return true;
@@ -105,30 +107,23 @@ unsigned int size(void)
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    // TODO
+    
     return false;
 }
 
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
-    for (int i = 0; hashtable[i] == Null; i++)
+    for (int i = 0; i < N;)
     {
-        if (hashtable[i]->next != NULL)
+        while (hashtable[i]->next != NULL)
         {
             node* trav = hashtable[i];
-            trav->next = hashtable[i]->next;
-            trav = trav->next;
+            hashtable[i]= trav->next;
             free(trav);
         }
-        else
-        {
             printf("free\n");
-            hashtable[i] = NULL;
-            free(hashtable[i]);
             i++;
-        }
     }
-    // TODO
-    return false;
+    return true;
 }
