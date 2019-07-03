@@ -58,13 +58,14 @@ bool load(const char *dictionary)
         int key = hash(word);
         
         //create node for word and allocate memory
-        node* hashNode = malloc(sizeof(node));
+        node *hashNode = malloc(sizeof(node));
         
         //copy word into hashNode
         strcpy(hashNode->word, word);
         
         //checks if there is a pointer at index(key) of the hash table
-        if (hashtable[key] == NULL) {
+        if (hashtable[key] == NULL) 
+        {
             
             hashtable[key] = hashNode;
             hashNode->next = NULL;
@@ -113,7 +114,7 @@ bool check(const char *word)
     int key = hash(word);
     
     //create trav
-    node* trav = hashtable[key];
+    node *trav = hashtable[key];
 
     while (trav != NULL)
     {
@@ -121,7 +122,6 @@ bool check(const char *word)
         {
             return true;
         }
-        
         trav = trav->next;
     }
 
@@ -135,11 +135,11 @@ bool unload(void)
     {
         while (hashtable[i])
         {
-            node* trav = hashtable[i];
+            node *trav = hashtable[i];
             hashtable[i] = trav->next;
             free(trav);
         }
-            i++;
+        i++;
     }
     return true;
 }
