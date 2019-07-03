@@ -82,7 +82,8 @@ bool load(const char *dictionary)
     
     // Close dictionary
     fclose(file);
-    printf("dictionary closed");
+    printf("dictionary closed\n");
+    printf("%i", wordCounter);
 
     // Indicate success
     return true;
@@ -91,8 +92,9 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    if (load == true){
+    if (wordCounter > 0){
         printf("Total words read was: %i", wordCounter);
+        return wordCounter;
     }
     else
     {
