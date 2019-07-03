@@ -22,6 +22,9 @@ node;
 // Represents a hash table
 node *hashtable[N];
 
+//counter for words loaded into dictionary
+int wordCounter = 0;
+
 // Hashes word to a number between 0 and 25, inclusive, based on its first letter
 unsigned int hash(const char *word)
 {
@@ -53,30 +56,30 @@ bool load(const char *dictionary)
     {
         //get index of hashtable to put word in
         int key = hash(word);
-        // printf("%i", key);
         
         //create node for word and allocate memory
         node* hashNode = malloc(sizeof(node));
         
         //copy word into hashNode
         strcpy(hashNode->word, word);
-        // printf("%s", hashNode->word);
         
-
         //checks if there is a pointer at index(key) of the hash table
         if (hashtable[key] == NULL) {
             
             hashtable[key] = hashNode;
             hashNode->next = NULL;
         }
-        //if hash table[key] is not empty, the next pointer points at the table and the pointer in the table becomes the current pointer
+        //hashNode's next pointer goes to the table and its current pointer goes to the node
         else 
         {
-           hashNode->next = hashtable[key];
-           hashtable[key] = hashNode;
+            hashNode->next = hashtable[key];
+            hashtable[key] = hashNode;
         }
+        
+        //increment word loaded
+        wordCounter++;
     }
-
+    
     // Close dictionary
     fclose(file);
     printf("dictionary closed");
@@ -88,8 +91,13 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+    if (load == true){
+        printf("Total words read was: %i", wordCounter);
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 // Returns true if word is in dictionary else false
