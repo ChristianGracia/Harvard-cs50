@@ -50,7 +50,7 @@ bool load(const char *dictionary)
     }
 
     // Buffer for a word
-    char word[LENGTH];
+    char word[LENGTH + 1];
 
     // Insert words into hash table
     while (fscanf(file, "%s", word) != EOF)
@@ -104,64 +104,29 @@ unsigned int size(void)
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    //find length of word for memory allocation of temp variable
-    int letters = strlen(word);
+    //create temp variable
+    char copy[strlen(word) + 1];
     
-    //convert word to lower case using a temp variable to store
-    char *tempWord = malloc(letters);
-    
-    // make all letters lowercase with a loop
-    for (int i = 0; i < letters; i++)
-    {
-        tempWord[i] = word[i];
-    }
-    
-    //add \0 terminator to signal end of word
-    tempWord[letters] = '\0';
-    
-    //find key of table using hash function
-    int key = hash(tempWord);
-    
-    //check if table even has an index filled with the corresponding letter
-    // node* rootCheck = hashtable[key];
-    
-    node* rootCheck = malloc(sizeof(node));
-    
-    rootCheck = hashtable[key];
+    //copy string from word to temp variable
+    strcpy(copy, word);
 
-    while (rootCheck != NULL)
+    //get table index from hash
+    int key = hash(word);
+    
+    //create trav
+    node* trav = hashtable[key];
+
+    while (trav != NULL)
     {
-        // use strcasecmp to be case insensitive
-        if (strcasecmp(rootCheck->word, word) == 0)
+        if (strcasecmp(trav->word, copy) == 0)
+        {
             return true;
-        rootCheck = rootCheck->next;
-    }
-    return false;
-    
-    
-    // if (rootCheck->next == NULL)
-    // {
-    //     if (strcmp(rootCheck->word, tempWord) == 0)
-    //     {
-    //         return true;
-    //     }
-    //     else return false;
-    // }
+        }
 
-    // while(rootCheck->next)
-    // {
-    //     if (strcmp(rootCheck->word, tempWord) == 0)
-    //     {
-    //         //word is in dictionary and valid
-    //         return true;
-    //     }
-    //     else
-    //     {
-    //         //move rootCheck
-    //         rootCheck = rootCheck->next;
-    //     }
-    // }
-    // return false;
+        trav = trav->next;
+    }
+
+    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful else false
@@ -169,7 +134,7 @@ bool unload(void)
 {
     for (int i = 0; i < N;)
     {
-        while (hashtable[i]->next != NULL)
+        while (hashtable[i])
         {
             node* trav = hashtable[i];
             hashtable[i] = trav->next;
