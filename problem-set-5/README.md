@@ -2,7 +2,7 @@
 Website made for problem set 5 of Harvard CS50.
 
 ## Tea Store Site
-Website will be a designed as tea store site
+Site will be designed for an online tea store.
 
 ...
 using Html, JavaScript, CSS, Bootstrap
@@ -11,6 +11,7 @@ using Html, JavaScript, CSS, Bootstrap
 ### Use:
 
 using the cs50 ide
+
 ...
 run entering "http-server" in the command line while in the homepage directory
 ...
