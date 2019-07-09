@@ -2,3 +2,14 @@
     text-align: center;
     margin-top: 40px;
 }
+#mailContainer{
+    align-items:center;
+    text-align:center;
+}
+#faqAnswer{
+    margin-left: 30px;
+    font-size: 20px;
+}
+#faqQuestion{
+    font-size: 30px;
+}
