@@ -10,6 +10,7 @@
 #body-container {
   max-width: 500px;
   margin: auto;
+  align-items:center;
 }
 #word-container {
   text-align: center;
