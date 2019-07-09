@@ -2,15 +2,15 @@
 Repository for **Harvard CS50** Problem Sets 2019
 
 
-## Problem Sets
+# Problem Sets
 
 [x] = completed
 
-* **Problem Set 0**
+## **Problem Set 0**
 
 - Scratch Game -- **[x]** 
 
-* **Problem Set 1**
+## **Problem Set 1**
 
 
 - Mario (less) -- **[x]**
@@ -23,7 +23,7 @@ Repository for **Harvard CS50** Problem Sets 2019
 
 
 
-* **Problem Set 2**
+## **Problem Set 2**
 
 
 - Caesar -- **[x]**
@@ -31,7 +31,7 @@ Repository for **Harvard CS50** Problem Sets 2019
 - Vigenere -- **[x]**
 
 
-* **Problem Set 3**
+## **Problem Set 3**
 
 
 - whodunit -- **[x]**
@@ -41,13 +41,13 @@ Repository for **Harvard CS50** Problem Sets 2019
 - Recover -- **[x]**
 
 
-* **Problem Set 4**
+## **Problem Set 4**
 
 
 - Speller --  **[x]**
 
 
-* **Problem Set 5**
+## **Problem Set 5**
 
 
 - Homepage -- [ ]
