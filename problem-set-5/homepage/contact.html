@@ -310,8 +310,17 @@
     function hideForm() {
         document.getElementById('form-container').style.display = "none";
         const pTag = document.createElement("p");
+
+        if (document.getElementById("customer-name").value != "") {
+            var custName = document.getElementById("customer-name").value;
+            pTag.innerText = "Thank you " + custName + "! You will hear from us soon.";
+        }
+        else {
+           pTag.innerText = "Thank you! You will hear from us soon.";
+        }
+
         pTag.setAttribute("id", "thank-you-message");
-        pTag.innerText = "Thank you! You will hear from us soon.";
+
         document.getElementById("message-title").innerText = "";
         document.getElementById("message-title").appendChild(pTag);
     }
