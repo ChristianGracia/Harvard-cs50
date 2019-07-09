@@ -26,5 +26,12 @@ click on any of the html files (home page is index.html but you all html pages f
 ```
 
 
+
+
+
+
+
+
+
 This is some pretty basic stuff but doing for CS50
 
