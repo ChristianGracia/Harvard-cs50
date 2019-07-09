@@ -1,25 +1,42 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
 .carousel {
   width: 230px;
   height: 260px;
   color: black;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   margin-left: 132px;
+
 }
 
 #body-container {
   max-width: 500px;
   margin: auto;
-  align-items:center;
+  align-items: center;
 }
+
 #word-container {
   text-align: center;
   margin-top: 40px;
 }
+
 #shipping-text {
   text-align: center;
   margin-top: 10px;
 }
+
 #order-now-link {
   margin-top: -10px;
+}
+
+body {
+  background: rgb(184, 225, 252);
+  background: -moz-linear-gradient(top, rgba(184, 225, 252, 1) 0%, rgba(169, 210, 243, 1) 10%, rgba(144, 186, 228, 1) 25%, rgba(144, 188, 234, 1) 37%, rgba(144, 191, 240, 1) 50%, rgba(107, 168, 229, 1) 51%, rgba(162, 218, 245, 1) 83%, rgba(189, 243, 253, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba(184, 225, 252, 1) 0%, rgba(169, 210, 243, 1) 10%, rgba(144, 186, 228, 1) 25%, rgba(144, 188, 234, 1) 37%, rgba(144, 191, 240, 1) 50%, rgba(107, 168, 229, 1) 51%, rgba(162, 218, 245, 1) 83%, rgba(189, 243, 253, 1) 100%);
+  background: linear-gradient(to bottom, rgba(184, 225, 252, 1) 0%, rgba(169, 210, 243, 1) 10%, rgba(144, 186, 228, 1) 25%, rgba(144, 188, 234, 1) 37%, rgba(144, 191, 240, 1) 50%, rgba(107, 168, 229, 1) 51%, rgba(162, 218, 245, 1) 83%, rgba(189, 243, 253, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd', GradientType=0);
 }
