@@ -15,8 +15,10 @@ body{
     text-align: center;
 }
 
-.contact-methods{
-    display:flex;
-    margin-top: -5px;
-    margin-bottom: -5px;
+
+#contact-info{
+  margin-top: 40px;
+}
+#contact-header{
+  margin-bottom: 40px;
 }

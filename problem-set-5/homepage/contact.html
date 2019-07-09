@@ -34,11 +34,10 @@
         <h1 id="contact-header">Contact Us</h1>
         <img src="https://cdn.pixabay.com/photo/2015/10/30/15/07/contact-us-1014232__340.png" height="80px" wdith="80px">
         <div id="contact-methods">
-            <p>Phone: 1(401)324-323</p>
-            <p>Tollfree: 1(800)879-4039</p>
-            <p>Email: customer-support@littletea.com</p>
-            <p>Facebook: facebook.com/littletea</p>
-            <p>Twitter: twitter.com/littlete</p>
+            <p>Phone: <a href ="tel:+14013243243">1(401)324-3243</a></p>
+            <p>Tollfree: <a href= "tel:+18008794039">1(800)879-4039</a></p>
+            <p>Email: <a href="https://www.customer-support@littletea.com">customer-support@littletea.com</a></p>
+            <p>Facebook: <a href ="https://www.facebook.com/littletea">www.facebook.com/littletea</a></p>
         </div>
     </div>
     <h2 id="message-title">Leave a Message and we will get back to you as soon as we can!</h2>
@@ -303,16 +302,16 @@
             </select>
             <label for="subject">Comments or Concerns</label>
             <textarea id="subject" name="comment-section" placeholder="Write your message here" style="height:200px"></textarea>
-            <input type="submit" value="Submit" onclick="myfunction()" reload="false">
+            <input type="submit" value="Submit" onclick="hideForm()" reload="false">
         </form>
     </div>
 </body>
 <script>
-    function myfunction() {
+    function hideForm() {
         document.getElementById('form-container').style.display = "none";
         const pTag = document.createElement("p");
         pTag.setAttribute("id", "thank-you-message");
-        pTag.innerText = "Thank you! You will hear from us soon";
+        pTag.innerText = "Thank you! You will hear from us soon.";
         document.getElementById("message-title").innerText = "";
         document.getElementById("message-title").appendChild(pTag);
     }
