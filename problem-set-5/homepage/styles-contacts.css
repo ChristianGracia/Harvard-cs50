@@ -8,13 +8,11 @@ input[type=text], select, textarea {
 
 #form-container {
   border-radius: 1px;
-  background-color: #f2f2f2;
   padding: 20px;
 }
 
 body{
     text-align: center;
-    color: #2F2FA2;
 }
 
 .contact-methods{

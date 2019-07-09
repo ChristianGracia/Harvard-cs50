@@ -4,3 +4,10 @@
   color: black;
   justify-content: center;
 }
+
+#body-container{
+    max-width: 500px;
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+}
