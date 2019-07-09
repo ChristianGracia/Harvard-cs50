@@ -11,3 +11,14 @@ input[type=text], select, textarea {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+body{
+    text-align: center;
+    color: #2F2FA2;
+}
+
+.contact-methods{
+    display:flex;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
