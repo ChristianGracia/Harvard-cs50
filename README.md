@@ -5,43 +5,43 @@ Repository for **Harvard CS50** Problem Sets 2019
 ## Problem Sets
 * **Problem Set 0**
 
-Scratch Game -- [x] 
+Scratch Game -- **[x]** 
 
 * **Problem Set 1**
 
 
-Mario (less) -- [x]
+Mario (less) -- **[x]**
 
-Mario (more) -- [x]
+Mario (more) -- **[x]**
 
-Cash -- [x]
+Cash -- **[x]**
 
-Credit -- [x]
+Credit -- **[x]**
 
 
 
 * **Problem Set 2**
 
 
-Caesar -- [x]
+Caesar -- **[x]**
 
-Vigenere -- [x]
+Vigenere -- **[x]**
 
 
 * **Problem Set 3**
 
 
-Whodunit -- [x]
+Whodunit -- **[x]**
 
-Resize -- [x]
+Resize -- **[x]**
  
-Recover -- [x]
+Recover -- **[x]**
 
 
 * **Problem Set 4**
 
 
-Speller --  [x]
+Speller --  **[x]**
 
 
 * **Problem Set 5**
