@@ -55,6 +55,19 @@ Currently finishing up Problem-Set-5
 - Homepage -- **[x]**
 
 
-* Problem Set 6
+## **Problem Set 6**
+
+
+- hello.py -- **[x]**
+
+- mario.py --   [ ] 
+
+
+
+
+
+
+
+
 * Problem Set 7
 * Problem Set 8
