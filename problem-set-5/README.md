@@ -11,18 +11,18 @@ Site will be designed for an online tea store using Html, JavaScript, CSS, Boots
 Use:
 
 ```
-using the cs50 ide
+using the cs50 ide (need check50 installed)
 ```
 
-Run on the terminal command line
+Then run on the terminal command line
 
 ```
 "http-server" while in the homepage directory
 ```
-Then
+Then in the opened window
 
 ```
-click on any of the html files (home page is index.html but you all html pages from one another)
+click on any of the html files (home page is index.html but you can get to all of the html pages from one another)
 ```
 
 
