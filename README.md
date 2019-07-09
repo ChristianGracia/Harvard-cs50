@@ -4,7 +4,9 @@ Repository for **Harvard CS50** Problem Sets 2019
 
 # Problem Sets
 
-[x] = completed
+[x] = complete
+
+Currently finishing up Problem-Set-5
 
 ## **Problem Set 0**
 
