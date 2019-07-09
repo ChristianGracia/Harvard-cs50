@@ -9,6 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="./styles/styles.css" rel="stylesheet">
     <link href="master-style-page" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -39,9 +40,12 @@
 
     <div id="body-container">
         <div id="word-container">
-            <h1>Welcome to Little Tea!</h1>
-            <p>Where we have the tea you want at the prices you need!</p>
-            <h2>Featured Deals</h2>
+            <h1 style="font-size: 40px;">Welcome to Little Tea!</h1>
+            <div id="slogan">
+                <p style="font-size: 30px;">WHERE WE HAVE THE TEA YOU WANT</p>
+                <p style="font-size: 35px;">AT THE PRICES YOU NEED</p>
+            </div>
+            <h2 id="featDeals">Featured Deals</h2>
         </div>
 
         <div class="carouselDeals">
@@ -90,7 +94,7 @@
     <div id="shipping-text">
         <p>Now offering free shipping world wide on orders over $200!</p>
         <div id="order-now-link">
-            <a href="products.html" style="font-weight: bold; color: red;">ORDER NOW</a>
+            <a id="orderLink" href="products.html" style="font-weight: bold; color: red;">CLICK HERE TO ORDER NOW</a>
         </div>
     </div>
 
