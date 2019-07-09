@@ -6,3 +6,25 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd', GradientType=0);
     font-weight: bold;
 }
+
+#product-header {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Concert One', cursive;
+}
+
+#list-container-tea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.teaName {
+    font-size: 20px;
+    color: red;
+}
+
+img {
+    width: 200px;
+    height: 230px;
+}
