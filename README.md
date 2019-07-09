@@ -3,11 +3,11 @@ Repository for **Harvard CS50** Problem Sets 2019
 
 
 ## Problem Sets
-* Problem Set 0
+* **Problem Set 0**
 
 Scratch Game -- **Completed** 
 
-* Problem Set 1
+* **Problem Set 1**
 
 Mario (less) -- **Completed**
 
@@ -18,12 +18,13 @@ Cash -- **Completed**
 Credit -- **Completed**
 
 
-* Problem Set 2 
+* **Problem Set 2**
+
 Caesar -- **Completed**
 
 Vigenere -- **Completed**
 
-* Problem Set 3 
+* **Problem Set 3**
 
 Whodunit -- **Completed**
 
@@ -31,11 +32,11 @@ Resize -- **Completed**
  
 Recover -- **Completed**
 
-* Problem Set 4
+* **Problem Set 4**
 
 Speller --  **Completed**
 
-* Problem Set 5
+* **Problem Set 5**
 
 Homepage -- **In Progress**
 
