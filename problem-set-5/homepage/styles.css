@@ -1,13 +1,23 @@
 .carousel {
-  width:230px;
-  height:260px;
+  width: 230px;
+  height: 260px;
   color: black;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  margin-left: 132px;
 }
 
-#body-container{
-    max-width: 500px;
+#body-container {
+  max-width: 500px;
   margin: auto;
-  display:flex;
-  flex-direction: column;
+}
+#word-container {
+  text-align: center;
+}
+#shipping-text {
+  text-align: center;
+  margin-top: 10px;
+}
+#order-now-link {
+  margin-top: -10px;
 }
