@@ -60,7 +60,11 @@ Currently finishing up Problem-Set-5
 
 - hello.py -- **[x]**
 
-- mario.py -- **[X]** 
+- mario-less.py -- **[X]** 
+
+- mario-more.py -- **[x]**
+
+- cash.py -- **[x]**
 
 
 

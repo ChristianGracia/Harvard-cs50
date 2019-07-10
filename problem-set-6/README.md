@@ -3,6 +3,10 @@ Hello, mario, cash/credit, caesar/vigenere, bleep in Python
 
 ## Complete
 
--hello -- **[x]**
--mario (less) -- **[x]**
--mario (more) -- ** [x]**
+-hello.py  **[x]**
+
+-mario.py (less) **[x]**
+
+-mario.py (more) **[x]**
+
+-cash.py **[x]**
