@@ -4,12 +4,12 @@ import math
 cash = 0
 
 while cash == 0:
-   temp = cs50.get_float("Change owed: ")
+    temp = cs50.get_float("Change owed: ")
    
-   if temp > 0:
-       cash = temp
+    if temp > 0:
+        cash = temp
        
-   else:
+    else:
         cash = 0
 
 pennies = 1
@@ -18,21 +18,25 @@ dimes = 10
 quarters = 25
 total = 0
 
-cashLeft = round(cash * 100);
+cashLeft = round(cash * 100)
 
-##quarters
+# quarters
+
 total = math.floor(cashLeft / quarters)
 cashLeft = cashLeft - (total * quarters)
 
-##dimes
+# dimes
+
 total = total + math.floor(((cashLeft % quarters) / dimes))
 cashLeft = cashLeft - (math.floor(((cashLeft % quarters) / dimes)) * dimes)
 
-##nickels
+# nickels
+
 total = total + math.floor((cashLeft % dimes) / nickels)
 cashLeft = cashLeft - (math.floor(((cashLeft % dimes) / nickels)) * nickels)
 
-##pennies
+# pennies
+
 total = total + math.floor(cashLeft % nickels)
 
 print(total)

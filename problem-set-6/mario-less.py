@@ -20,8 +20,8 @@ hashes = 1
 spaces = height-1
 
 for x in range(0, height):
-    while (counter>0):
-        print ((" "*spaces)+("#"*hashes))
-        spaces= spaces-1
+    while (counter > 0):
+        print((" "*spaces)+("#"*hashes))
+        spaces = spaces-1
         hashes = hashes + 1
         counter = counter-1
