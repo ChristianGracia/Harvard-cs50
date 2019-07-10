@@ -17,11 +17,11 @@ while i < 1:
 
 counter = height
 hashes = 1
-spaces = height-1
+spaces = height - 1
 
 for x in range(0, height):
     while (counter > 0):
-        print((" "*spaces)+("#"*hashes))
-        spaces = spaces-1
+        print((" " * spaces)+("#" * hashes))
+        spaces = spaces - 1
         hashes = hashes + 1
-        counter = counter-1
+        counter = counter - 1
