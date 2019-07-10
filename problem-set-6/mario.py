@@ -1,45 +1,27 @@
 i = 0
 while i < 1:
-    userheight = int(input("height:"))
-    if userheight > 0:
-        if userheight < 9:
-            print ("hi")
-            i = 1
-        else:
-            print("fail")
-            i = 0
-    else:
-        print("fail")
+    userheight = input("height:")
+    
+    if userheight.isalpha():
         i = 0
-print (userheight)
-height = userheight
-
-k=height
-while (k>0):
-    print( "#" +(""*k)+ "#")
-    k=k-1
+    elif userheight.isdigit():
+        height = int(userheight)
     
-    
-    
-# for x in range(0, userheight):
-#     for y in range (0, x):
-#         print ("#") * y
-    
-    
-    
-    # print ("#")
+        if height > 0:
+            if height < 9:
+                i = 1
+            else:
+                i = 0
+        else:
+            i = 0
 
+counter = height
+hashes = 1
+spaces = height-1
 
-
-
-
-# for x in range(0, height):
-#     print ("#")
-
-# if height > 0:
-#     print('too low')
-# elif 0 < height < 9:
-#     print("#")
-# else:
-#     print('too high')
-
+for x in range(0, height):
+    while (counter>0):
+        print ((" "*spaces)+("#"*hashes))
+        spaces= spaces-1
+        hashes = hashes + 1
+        counter = counter-1
