@@ -60,7 +60,7 @@ Currently finishing up Problem-Set-5
 
 - hello.py -- **[x]**
 
-- mario.py --   [ ] 
+- mario.py -- **[X]** 
 
 
 

@@ -1,4 +1,7 @@
 # Problem Set 6
 Hello, mario, cash/credit, caesar/vigenere, bleep in Python
 
-##init
+## Complete
+
+-hello **[x]**
+-mario (less) **[x]**
