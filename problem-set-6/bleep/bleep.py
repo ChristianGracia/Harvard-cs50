@@ -1,12 +1,12 @@
 from cs50 import get_string
-from sys import argv
+from sys import argv, exit
 
 
 def main():
 
     if len(argv) != 2:
         print("Usage: python bleep.py dictionary")
-        return 1
+        exit(1)
 
     f = open(argv[1], "r")
     if f.mode == 'r':
@@ -23,7 +23,6 @@ def main():
     for x in range(len(inputWords)):
         if inputWords[x].lower() in bannedWords:
             inputWords[x] = "*" * len(inputWords[x])
-            print(inputWords[x])
 
     returnString = ""
 
