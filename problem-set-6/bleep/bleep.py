@@ -13,15 +13,23 @@ def main():
         contents = f.readlines()
 
     bannedWords = set()
-    for x in range((len(contents) - 1)):
+    for x in range((len(contents))):
         bannedWords.add((contents[x].strip()))
+    print(bannedWords)
     userInput = get_string("What message would you like to censor?\n")
 
     inputWords = userInput.split(" ")
-    print(inputWords)
 
     for x in range(len(inputWords)):
-        print(inputWords[x])
+        if inputWords[x].lower() in bannedWords:
+            inputWords[x] = "*" * len(inputWords[x])
+            print(inputWords[x])
+
+    returnString = ""
+
+    for words in inputWords:
+        returnString += words
+    print(returnString)
 
 
 if __name__ == "__main__":
