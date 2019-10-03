@@ -6,7 +6,9 @@ inputString = ""
 key = int(sys.argv[1])
 
 while len(inputString) == 0:
-    inputString = cs50.get_string("input a string to be encrypted")
+    inputString = cs50.get_string("input a string to be encrypted\n")
 
-print(key)
+while key > 26:
+    key -= 26
 
+print("plaintext: " + inputString)
