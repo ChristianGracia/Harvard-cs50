@@ -3,6 +3,9 @@ from sys import argv
 
 
 def main():
+    if len(argv) != 2:
+        print("Usage: python bleep.py dictionary")
+        return 0
 
     f = open(argv[1], "r")
     if f.mode == 'r':
