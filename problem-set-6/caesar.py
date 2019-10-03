@@ -13,7 +13,13 @@ stringLength = len(inputString)
 while key > 26:
     key -= 26
 
-print("plaintext: " + inputString)
-
+print(key)
+returnString = ""
 for letter in inputString:
-    print("cyphertext: " + chr(ord(letter)+key), end="")
+    if letter.isupper():
+        returnString += chr((((ord(letter) + key) - 65) % 26) + 65)
+    elif letter.islower():
+        returnString += chr((((ord(letter) + key) - 97) % 26) + 97)
+    else:
+        returnString += letter
+print("ciphertext: " + returnString)
