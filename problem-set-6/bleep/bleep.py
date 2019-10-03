@@ -15,7 +15,7 @@ def main():
     bannedWords = set()
     for x in range((len(contents))):
         bannedWords.add((contents[x].strip()))
-    print(bannedWords)
+
     userInput = get_string("What message would you like to censor?\n")
 
     inputWords = userInput.split(" ")
@@ -28,8 +28,8 @@ def main():
     returnString = ""
 
     for words in inputWords:
-        returnString += words
-    print(returnString)
+        returnString += words + " "
+    print(returnString.strip())
 
 
 if __name__ == "__main__":
