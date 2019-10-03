@@ -4,7 +4,10 @@ from sys import argv
 
 def main():
 
-    # TODO
+    f = open(argv[1], "r")
+    if f.mode == 'r':
+        contents = f.read()
+        print(contents)
 
 
 if __name__ == "__main__":
