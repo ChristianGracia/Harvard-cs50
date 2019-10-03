@@ -16,4 +16,4 @@ while key > 26:
 print("plaintext: " + inputString)
 
 for letter in inputString:
-    print(ord(letter))
+    print("cyphertext: " + chr(ord(letter)+key), end="")
