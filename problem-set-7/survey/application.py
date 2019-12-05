@@ -34,6 +34,7 @@ def post_form():
 
     name = request.form.get("name")
     shoe = request.form.get("shoe")
+
     color = request.form.get("color")
     premium = request.form.get("premium")
     if name == "" or shoe=="":
@@ -45,12 +46,21 @@ def post_form():
     else:
         premium = "Non-Premium"
 
+
     with open('survey.csv', 'w', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        spamwriter.writerow([name] + [shoe] + [color] + [premium])
-    return render_template("sheet.html")
+        writer = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        writer.writerow([name] + [shoe] + [color] + [premium])
 
+    return redirect("/sheet")
 
+surveyList = []
 @app.route("/sheet", methods=["GET"])
 def get_sheet():
-    return render_template("sheet.html")
+    with open('survey.csv', newline='') as csvfile:
+
+        reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        for row in reader:
+            surveyList.append(" ".join(row))
+        print(len(surveyList))
+
+    return render_template("sheet.html", message=surveyList)

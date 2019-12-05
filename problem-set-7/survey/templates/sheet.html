@@ -5,6 +5,28 @@
     <div>
         <h4 class="primary-heading">Past submissions</h4>
         <p>View all other submissions!</p>
+
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Submissions</th>
+
+    </tr>
+  </thead>
+
+    {%for x in message %}
+
+
+   <tbody>
+    <tr>
+
+      <td>{{x}}</td>
+
+     </tr>
+  </tbody>
+   {%endfor%}
+</table>
     </div>
 
 {% endblock %}

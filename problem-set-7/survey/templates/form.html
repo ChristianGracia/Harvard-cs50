@@ -12,9 +12,9 @@
 
     <form  action="/form" method="post">
          <div class="form-container">
-        <input name="name" type="text" placeholder="Name"/>
+        <input id="name" name="name" type="text" placeholder="Name"/>
 
-        <input name="shoe" type="text" placeholder="Shoe"/>
+        <input id="shoe" name="shoe" type="text" placeholder="Shoe"/>
 
       <div style= "display: flex; flex-direction: row; justify-content:center; padding: 15px">
           <p>Premium member</p><input name="premium" style="margin: 8px 5px" type ="checkbox">
@@ -29,7 +29,7 @@
 
 
 
-        <button  class="btn btn-primary" style="margin-top:20px" type="submit">Submit</button>
+        <button  class="btn btn-primary" style="margin-top:20px" type="submit" onclick="errorHandle()">Submit</button>
    </div>
 
     </form>
@@ -37,8 +37,15 @@
     </div>
 
     <script>
+       var name = document.getElementById("name").value;
+        var shoe = document.getElementById("shoe").value;
+        const errorHandle = () => {
 
-        /* TODO */
+           if ( name.length < 1){
+               alert("No name or shoe inputted!");
+           }
+           preventDefault()
+       }
 
     </script>
 
