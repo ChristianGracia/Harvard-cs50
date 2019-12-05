@@ -1,12 +1,14 @@
 # Problem set 5
 Website made for problem set 5 of Harvard CS50.
 
+Very basic but required for CS50
+
 
 
 
 ### Tea Store Site
 
-Site will be designed for an online tea store using Html, JavaScript, CSS, Bootstrap.
+Site will be designed for an online tea store using Html, JavaScript, CSS, and Bootstrap.
 
 If using CS50 ide, type in:
 
@@ -24,15 +26,4 @@ If using other ide:
 just preview file :)
 ```
 
-
-
-
-
-
-
-
-
-
-
-This is some pretty basic stuff but doing for CS50
 
