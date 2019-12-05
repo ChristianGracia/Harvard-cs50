@@ -75,7 +75,7 @@ Currently finishing up Problem-Set-5
 
 - similarities -- **[x]**
 
-- survey -- **[ ]**
+- survey -- **[x]**
 
 ## **Problem Set 8**
 
