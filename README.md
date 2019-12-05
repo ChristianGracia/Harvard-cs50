@@ -74,11 +74,4 @@ Currently finishing up Problem-Set-5
 
 - similarities -- **[x]**
 
-
-
-
-
-
-
-* Problem Set 7
 * Problem Set 8
