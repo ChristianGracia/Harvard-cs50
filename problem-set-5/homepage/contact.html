@@ -1,88 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./styles/styles-contacts.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./styles/styles-contacts.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact Us</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-expand">
-        <a class="navbar-brand" href="index.html">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="products.html">Tea Selection</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shipping-faq.html">Shipping FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Tea Selection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shipping-faq.html">Shipping FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <div id="contact-info">
-        <h1 id="contact-header">Contact Us</h1>
-        <br>
-        <img src="https://cdn.pixabay.com/photo/2015/10/30/15/07/contact-us-1014232__340.png" height="80px" wdith="80px">
-        <br><br>
-        <div id="contact-methods">
-            <p>Phone: <a href="tel:+14013243243">1(401)324-3243</a></p>
-            <p>Toll-free: <a href="tel:+18008794039">1(800)879-4039</a></p>
-            <p>Email: <a href="https://www.customer-support@littletea.com">customer-support@littletea.com</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/littletea">www.facebook.com/littletea</a></p>
-        </div>
+      <h1 id="contact-header">Contact Us</h1>
+      <br />
+      <img
+        src="https://cdn.pixabay.com/photo/2015/10/30/15/07/contact-us-1014232__340.png"
+        height="80px"
+        wdith="80px"
+      />
+      <br /><br />
+      <div id="contact-methods">
+        <p>Phone: <a href="tel:+14013243243">1(401)324-3243</a></p>
+        <p>Toll-free: <a href="tel:+18008794039">1(800)879-4039</a></p>
+        <p>
+          Email:
+          <a href="https://www.customer-support@littletea.com"
+            >customer-support@littletea.com</a
+          >
+        </p>
+        <p>
+          Facebook:
+          <a href="https://www.facebook.com/littletea"
+            >www.facebook.com/littletea</a
+          >
+        </p>
+      </div>
     </div>
-    <h2 id="message-title">Leave a message and we will get back to you as soon as we can!</h2>
+    <h2 id="message-title">
+      Leave a message and we will get back to you as soon as we can!
+    </h2>
     <div id="form-container">
-        <form onsubmit="return false">
-            <label for="fname">Name</label>
-            <input type="text" id="customer-name" name="nameField" placeholder="Name">
-            <label for="email">Email</label>
-            <input type="text" id="customer-email" name="emailField" placeholder="Email">
-            <label for="country">Country</label>
-            <select id="country" name="country">
-                <!--deleted 150+ countries I had on country list to make code more readable since this site is not going live.
+      <form onsubmit="return false">
+        <label for="fname">Name</label>
+        <input
+          type="text"
+          id="customer-name"
+          name="nameField"
+          placeholder="Name"
+        />
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="customer-email"
+          name="emailField"
+          placeholder="Email"
+        />
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <!--deleted 150+ countries I had on country list to make code more readable since this site is not going live.
                <option value="USA">United States</option>
             
                <option value="VGB">Virgin Islands, British</option>
                >-->
-               <option value="ZWE">Zimbabwe</option>
-            </select>
-            <label for="subject">Leave us a note!</label>
-            <textarea id="subject" name="comment-section" placeholder="Write your message here" style="height:200px"></textarea>
-            <input type="submit" value="Submit" onclick="hideForm()" reload="false">
-        </form>
+          <option value="ZWE">Zimbabwe</option>
+        </select>
+        <label for="subject">Leave us a note!</label>
+        <textarea
+          id="subject"
+          name="comment-section"
+          placeholder="Write your message here"
+          style="height:200px"
+        ></textarea>
+        <input
+          type="submit"
+          value="Submit"
+          onclick="hideForm()"
+          reload="false"
+        />
+      </form>
     </div>
-</body>
-<script>
+  </body>
+  <script>
     function hideForm() {
-        document.getElementById('form-container').style.display = "none";
-        const pTag = document.createElement("p");
+      document.getElementById("form-container").style.display = "none";
+      const pTag = document.createElement("p");
 
-        if (document.getElementById("customer-name").value != "") {
-            var custName = document.getElementById("customer-name").value;
-            pTag.innerText = "Thank you " + custName + "! You will hear from us soon.";
-        }
-        else {
-            pTag.innerText = "Thank you! You will hear from us soon.";
-        }
+      if (document.getElementById("customer-name").value != "") {
+        var custName = document.getElementById("customer-name").value;
+        pTag.innerText =
+          "Thank you " + custName + "! You will hear from us soon.";
+      } else {
+        pTag.innerText = "Thank you! You will hear from us soon.";
+      }
 
-        pTag.setAttribute("id", "thank-you-message");
+      pTag.setAttribute("id", "thank-you-message");
 
-        document.getElementById("message-title").innerText = "";
-        document.getElementById("message-title").appendChild(pTag);
+      document.getElementById("message-title").innerText = "";
+      document.getElementById("message-title").appendChild(pTag);
     }
-</script>
-
+  </script>
 </html>

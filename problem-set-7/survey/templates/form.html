@@ -1,52 +1,50 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block main %}
 
-{% block main %}
+<div class="container">
+  <h1 class="mb-3">Form</h1>
 
-    <div class="container">
-    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
-    <h1 class="mb-3">Form</h1>
+  <p style="margin-top:20px;margin-bottom: 40px">
+    Tell us the shows you want to see next!
+  </p>
+  <form action="/form" method="post">
+    <div class="form-container">
+      <input id="name" name="name" type="text" placeholder="Name" />
 
-    <p style="margin-top:20px;margin-bottom: 40px">Tell us the shows you want to see next!</p>
+      <input id="shoe" name="shoe" type="text" placeholder="Shoe" />
 
-    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
-
-    <form  action="/form" method="post">
-         <div class="form-container">
-        <input id="name" name="name" type="text" placeholder="Name"/>
-
-        <input id="shoe" name="shoe" type="text" placeholder="Shoe"/>
-
-      <div style= "display: flex; flex-direction: row; justify-content:center; padding: 15px">
-          <p>Premium member</p><input name="premium" style="margin: 8px 5px" type ="checkbox">
-          </div>
+      <div
+        style="display: flex; flex-direction: row; justify-content:center; padding: 15px"
+      >
+        <p>Premium member</p>
+        <input name="premium" style="margin: 8px 5px" type="checkbox" />
+      </div>
       <p>Color</p>
-      <select name="color" >
-      <option value="red">red</option>
-      <option value="blue">blue</option>
-      <option value="black">black</option>
-      <option value="yellow">yellow</option>
+      <select name="color">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="black">black</option>
+        <option value="yellow">yellow</option>
       </select>
-
-
-
-        <button  class="btn btn-primary" style="margin-top:20px" type="submit" onclick="errorHandle()">Submit</button>
-   </div>
-
-    </form>
-
+      <button
+        class="btn btn-primary"
+        style="margin-top:20px"
+        type="submit"
+        onclick="errorHandle()"
+      >
+        Submit
+      </button>
     </div>
-
-    <script>
-       var name = document.getElementById("name").value;
-        var shoe = document.getElementById("shoe").value;
-        const errorHandle = () => {
-
-           if ( name.length < 1){
-               alert("No name or shoe inputted!");
-           }
-           preventDefault()
-       }
-
-    </script>
+  </form>
+</div>
+<script>
+  var name = document.getElementById("name").value;
+  var shoe = document.getElementById("shoe").value;
+  const errorHandle = () => {
+    if (name.length < 1) {
+      alert("No name or shoe inputted!");
+    }
+    preventDefault();
+  };
+</script>
 
 {% endblock %}
