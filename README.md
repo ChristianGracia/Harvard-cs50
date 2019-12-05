@@ -72,6 +72,14 @@ Currently finishing up Problem-Set-5
 
 ## **Problem Set 7**
 
+
 - similarities -- **[x]**
 
-* Problem Set 8
+- survey -- **[ ]**
+
+## **Problem Set 8**
+
+- finance -- **[ ]**
+
+
+
