@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <div class="container">
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <p style="margin-top:20px;margin-bottom: 40px">Tell us the shows you want to see next!</p>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+
+    <form  action="/form" method="post">
+         <div class="form-container">
+        <input name="name" type="text" placeholder="Name"/>
+
+        <input name="shoe" type="text" placeholder="Shoe"/>
+
+      <div style= "display: flex; flex-direction: row; justify-content:center; padding: 15px">
+          <p>Premium member</p><input name="premium" style="margin: 8px 5px" type ="checkbox">
+          </div>
+      <p>Color</p>
+      <select name="color" >
+      <option value="red">red</option>
+      <option value="blue">blue</option>
+      <option value="black">black</option>
+      <option value="yellow">yellow</option>
+      </select>
+
+
+
+        <button  class="btn btn-primary" style="margin-top:20px" type="submit">Submit</button>
+   </div>
+
+    </form>
+
+    </div>
+
+    <script>
+
+        /* TODO */
+
+    </script>
+
+{% endblock %}
