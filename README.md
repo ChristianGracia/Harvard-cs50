@@ -70,6 +70,9 @@ Currently finishing up Problem-Set-5
 
 - bleep.py -- **[x]**
 
+## **Problem Set 7**
+
+- similarities -- **[x]**
 
 
 
