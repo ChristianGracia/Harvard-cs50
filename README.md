@@ -70,12 +70,16 @@ Currently finishing up Problem-Set-5
 
 - bleep.py -- **[x]**
 
+## **Problem Set 7**
+
+
+- similarities -- **[x]**
+
+- survey -- **[ ]**
+
+## **Problem Set 8**
+
+- finance -- **[ ]**
 
 
 
-
-
-
-
-* Problem Set 7
-* Problem Set 8
