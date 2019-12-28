@@ -23,6 +23,7 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 # Custom filter
 app.jinja_env.filters["usd"] = usd
 
@@ -57,13 +58,15 @@ def buy():
 @app.route("/check", methods=["GET"])
 def check():
 
-    if username_check(request.args.get("username")):
+    if len(request.args.get("username")) > 0 and username_check(request.args.get("username")):
         return jsonify(True)
     else:
         return jsonify(False)
 
+
 def username_check(username):
     return len(db.execute("SELECT username FROM users WHERE username = :username", username=username)) == 0
+
 
 @app.route("/history")
 @login_required
@@ -147,7 +150,6 @@ def register():
         db.execute('INSERT INTO "users" ("id","username","hash") VALUES (NULL, :username, :hashed_pword)',
                    username=request.form.get("username"),
                    hashed_pword=generate_password_hash(request.form.get("password")))
-
 
         # Redirect user to home page
         return redirect("/")
