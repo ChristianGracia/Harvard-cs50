@@ -23,7 +23,6 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-
 # Custom filter
 app.jinja_env.filters["usd"] = usd
 
@@ -57,9 +56,14 @@ def buy():
 
 @app.route("/check", methods=["GET"])
 def check():
-    """Return true if username available, else false, in JSON format"""
-    return jsonify("TODO")
 
+    if username_check(request.args.get("username")):
+        return jsonify(True)
+    else:
+        return jsonify(False)
+
+def username_check(username):
+    return len(db.execute("SELECT username FROM users WHERE username = :username", username=username)) == 0
 
 @app.route("/history")
 @login_required
@@ -133,19 +137,20 @@ def register():
         # Ensure password was submitted
         elif not request.form.get("password"):
             return apology("must provide password", 400)
+        elif not request.form.get("confirmation"):
+            return apology("must confirm password")
         elif request.form.get("password") != request.form.get("confirmation"):
-            return apology("Passwords must match", 403)
+            return apology("Passwords must match")
+        if not username_check(request.form.get("username")):
+            return apology("username already taken")
 
-        # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = :username",
-                          username=request.form.get("username"))
+        db.execute('INSERT INTO "users" ("id","username","hash") VALUES (NULL, :username, :hashed_pword)',
+                   username=request.form.get("username"),
+                   hashed_pword=generate_password_hash(request.form.get("password")))
 
-        # Ensure username exists and password is correct
-        if len(rows) == 1:
-            return apology("Username already taken", 403)
 
         # Redirect user to home page
-        # return redirect("/")
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
