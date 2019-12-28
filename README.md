@@ -79,7 +79,7 @@ Currently finishing up Problem-Set-5
 
 ## **Problem Set 8**
 
-- finance -- **[ ]**
+- finance -- **[x]**
 
 
 
