@@ -6,7 +6,7 @@ Repository for **Harvard CS50** Problem Sets 2019
 
 [x] = complete
 
-Currently finishing up Problem-Set-5
+**ALL PROBLEMS FULLY COMPLETE**
 
 ## **Problem Set 0**
 
