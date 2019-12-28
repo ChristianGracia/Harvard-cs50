@@ -58,28 +58,28 @@ Repository for **Harvard CS50** Problem Sets 2019
 ## **Problem Set 6**
 
 
-- hello.py -- **[x]**
+- Hello.py -- **[x]**
 
-- mario-less.py -- **[X]** 
+- Mario-less.py -- **[X]** 
 
-- mario-more.py -- **[x]**
+- Mario-more.py -- **[x]**
 
-- cash.py -- **[x]**
+- Cash.py -- **[x]**
 
-- caesar.py -- **[x]**
+- Caesar.py -- **[x]**
 
-- bleep.py -- **[x]**
+- Bleep.py -- **[x]**
 
 ## **Problem Set 7**
 
 
-- similarities -- **[x]**
+- Similarities -- **[x]**
 
-- survey -- **[x]**
+- Survey -- **[x]**
 
 ## **Problem Set 8**
 
-- finance -- **[x]**
+- Finance -- **[x]**
 
 
 
