@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Funds
+{% endblock %}
+
+{% block main %}
+    <form action="/add_funds" method="post">
+
+        <div class="form-group">
+            <input class="form-control" name="amount" placeholder="Amount" type="number" min="1" required>
+            <div>
+                Enter a positive number
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add Funds</button>
+    </form>
+
+
+{% endblock %}
